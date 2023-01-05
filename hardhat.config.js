@@ -33,8 +33,10 @@ module.exports = {
   },
   namedAccounts: {
     deployer: {
-      default: 0,
-      1: 0,
+      default: 0
     },
+    player: {
+      default: 1
+    }
   },
 };
