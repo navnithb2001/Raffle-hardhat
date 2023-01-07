@@ -12,12 +12,17 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
-    hardhat: {},
+    hardhat: {
+      chainId: 31337,
+    },
+    localhost: {
+      chainId: 31337,
+    },
     goerli: {
       url: GOERLI_RPC_URL,
       accounts: [PRIVATE_KEY],
       chainId: 5,
-      blockConfirmations: 6
+      blockConfirmations: 6,
     },
   },
   solidity: "0.8.17",
@@ -33,13 +38,13 @@ module.exports = {
   },
   namedAccounts: {
     deployer: {
-      default: 0
+      default: 0,
     },
     player: {
-      default: 1
-    }
+      default: 1,
+    },
   },
   mocha: {
-    timeout: 200000
-  }
+    timeout: 500000,
+  },
 };
